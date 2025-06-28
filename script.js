@@ -684,7 +684,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(data.meta.title || 'ESL Presentation')}</title>
+    <title>${escapeHtml(data.meta.title || 'Instructional Presentation')}</title>
     <style>
         html {
             font-size: var(--base-font-size, 16px); /* Default to 16px */
