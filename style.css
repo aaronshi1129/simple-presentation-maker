@@ -1,0 +1,165 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0; /* Reset margin to allow footer to sit at the bottom */
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex; /* Enable flexbox for body */
+    flex-direction: column; /* Arrange content and footer vertically */
+    min-height: 100vh; /* Ensure body takes at least full viewport height */
+}
+.container {
+    max-width: 900px;
+    margin: 20px auto; /* Add margin top/bottom and center */
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    flex-grow: 1; /* Allow container to grow and push footer down */
+}
+h1, h2 {
+    color: #2c3e50;
+}
+.section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="date"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+.button {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s ease;
+    margin-right: 10px;
+}
+.button:hover {
+    background-color: #2980b9;
+}
+.button.secondary {
+    background-color: #e74c3c;
+}
+.button.secondary:hover {
+    background-color: #c0392b;
+}
+.paragraph-section {
+    background-color: #e8f4f8;
+    border-color: #b3e0f2;
+    margin-bottom: 20px;
+    position: relative;
+}
+.paragraph-section .remove-paragraph-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+}
+.explanation-item {
+    background-color: #f0f8ff;
+    border: 1px dashed #aed6f1;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    position: relative;
+}
+.explanation-item .remove-explanation-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+.add-explanation-btn {
+    margin-top: 10px;
+    background-color: #2ecc71;
+}
+.add-explanation-btn:hover {
+    background-color: #27ae60;
+}
+.export-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* Site Footer */
+.site-footer {
+    background-color: #2c3e50; /* Dark blue/grey */
+    color: #ffffff;
+    padding: 20px 0;
+    margin-top: 40px; /* Space above footer */
+    text-align: center;
+    font-size: 0.9em;
+    width: 100%;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+.site-footer .footer-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #aed6f1; /* Lighter blue on hover */
+}
+
+.site-footer .separator {
+    margin: 0 10px;
+    color: #7f8c8d; /* Slightly lighter separator */
+}
+
+/* Specific styling for the Clear All button */
+#clearAllBtn {
+    margin-left: 10px; /* Add some space between Add Paragraph and Clear All */
+}
