@@ -429,7 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Populate meta info
             for (const key in metaInfoFields) {
-                if (metaInfoFields[key] && data.meta[key]) {
+                // Ensure the DOM element exists and the key exists in the loaded data's meta object
+                if (metaInfoFields[key] && data.meta && data.meta.hasOwnProperty(key)) {
                     metaInfoFields[key].value = data.meta[key];
                 }
             }
@@ -684,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${escapeHtml(data.meta.title || 'Instructional Presentation')}</title>
+    <title>${escapeHtml(data.meta.title || 'ESL Presentation')}</title>
     <style>
         html {
             font-size: var(--base-font-size, 16px); /* Default to 16px */
@@ -713,7 +714,7 @@ document.addEventListener('DOMContentLoaded', () => {
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 50px;
+            padding: 50px 50px 100px 50px; /* Increased bottom padding for controls/footer */
             box-sizing: border-box;
             background-color: #ffffff;
             transition: opacity 0.5s ease-in-out;
@@ -731,6 +732,7 @@ document.addEventListener('DOMContentLoaded', () => {
             background: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            box-sizing: border-box;
         }
         .slide h1 {
             color: #2c3e50;
@@ -767,10 +769,17 @@ document.addEventListener('DOMContentLoaded', () => {
             white-space: pre-wrap; /* Preserve line breaks from textarea */
         }
 
+        /* Styles for scrollable paragraph content */
+        .paragraph-slide-content {
+            max-height: calc(100vh - 190px); /* 100vh - (slide top+bottom padding) - (slide-content top+bottom padding) */
+            overflow-y: auto;
+            text-align: left; /* Ensure paragraph text is left-aligned within its container */
+        }
+
         /* Navigation and Font Adjustment buttons */
         .controls-container {
             position: fixed;
-            bottom: 20px;
+            bottom: 30px; /* Adjusted to prevent overlap with increased slide padding */
             width: 100%;
             text-align: center;
             z-index: 99;
